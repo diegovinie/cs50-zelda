@@ -39,6 +39,12 @@ function Entity:init(def)
 
     self.dead = false
     -- self.control = def.control
+
+    local function createRandomLoad(prob)
+        return math.random() < prob and 'heart' or nil
+    end
+
+    self.loaded = createRandomLoad(0.15)
 end
 
 function Entity:createAnimations(animations)
@@ -102,6 +108,33 @@ end
 
 function Entity:processAI(params, dt)
     self.stateMachine:processAI(params, dt)
+end
+
+function Entity:getHealed(amount)
+    self.health = self.health + amount
+end
+
+function Entity:die(killer, room)
+    self.dead = true
+
+    if self.loaded then
+        local pack = GameObject(
+            GAME_OBJECT_DEFS[self.loaded],
+            self.x,
+            self.y
+        )
+
+        pack.onCollide = function()
+            pack.inPlay = false
+            gSounds['pickup']:play()
+
+            if pack.type == 'heart' then
+                killer:getHealed(2)
+            end
+        end
+
+        table.insert(room.objects, pack)
+    end
 end
 
 function Entity:render(adjacentOffsetX, adjacentOffsetY)
