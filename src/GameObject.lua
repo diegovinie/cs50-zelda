@@ -9,7 +9,7 @@
 GameObject = Class{}
 
 function GameObject:init(def, x, y)
-    
+
     -- string identifying this object type
     self.type = def.type
 
@@ -28,6 +28,8 @@ function GameObject:init(def, x, y)
     self.y = y
     self.width = def.width
     self.height = def.height
+    self.inPlay = true
+    self.scale = def.scale or 1
 
     -- default empty collision callback
     self.onCollide = function() end
@@ -38,6 +40,13 @@ function GameObject:update(dt)
 end
 
 function GameObject:render(adjacentOffsetX, adjacentOffsetY)
-    love.graphics.draw(gTextures[self.texture], gFrames[self.texture][self.states[self.state].frame or self.frame],
-        self.x + adjacentOffsetX, self.y + adjacentOffsetY)
+    love.graphics.draw(
+        gTextures[self.texture],
+        gFrames[self.texture][self.states[self.state].frame or self.frame],
+        self.x + (0.5 - 0.5 * self.scale) * self.width + adjacentOffsetX,
+        self.y + (0.5 - 0.5 * self.scale) * self.height,
+        nil,
+        self.scale,
+        self.scale
+    )
 end
