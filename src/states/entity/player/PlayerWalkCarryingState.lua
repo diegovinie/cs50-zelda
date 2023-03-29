@@ -19,3 +19,12 @@ function PlayerWalkCarryingState:init(player, dungeon)
         idle = 'idle-carrying'
     }
 end
+
+function PlayerWalkCarryingState:update(dt)
+    if self.entity.control:pressed('buttonA') then
+        print('throw')
+        self.entity:changeState('walk')
+    else
+        PlayerWalkState.update(self, dt)
+    end
+end

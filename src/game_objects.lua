@@ -40,7 +40,7 @@ GAME_OBJECT_DEFS = {
         }
     },
     ['pot'] = {
-        type = 'pot',
+        type = 'carriable',
         texture = 'tiles',
         frame = 2,
         width = 8,

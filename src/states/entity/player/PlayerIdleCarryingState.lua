@@ -21,6 +21,7 @@ function PlayerIdleCarryingState:update(dt)
     end
 
     if self.entity.control.buttonA then
-        -- self.entity:changeState('throw')
+        print('throw idle')
+        self.entity:changeState('idle')
     end
 end

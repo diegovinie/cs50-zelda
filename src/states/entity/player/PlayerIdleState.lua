@@ -22,6 +22,21 @@ function PlayerIdleState:update(dt)
     end
 
     if self.entity.control.buttonA then
-        self.entity:changeState('swing-sword')
+        if self.entity.control:pressed('buttonA') then
+            local box = self.entity:createActionBox()
+
+            for _, object in pairs(self.dungeon.currentRoom.objects) do
+                if self.entity.collides(box, object) then
+                    if object.type == 'carriable' then
+                        self.entity:changeState('lift')
+                        goto continue
+                    end
+                end
+            end
+
+            self.entity:changeState('swing-sword')
+
+            ::continue::
+        end
     end
 end

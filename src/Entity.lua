@@ -137,6 +137,37 @@ function Entity:die(killer, room)
     end
 end
 
+function Entity:createActionBox()
+    -- create hitbox based on where the player is and facing
+    local direction = self.direction
+    local hitboxX, hitboxY, hitboxWidth, hitboxHeight
+
+    if direction == 'left' then
+        hitboxWidth = 8
+        hitboxHeight = 16
+        hitboxX = self.x - hitboxWidth
+        hitboxY = self.y + 2
+    elseif direction == 'right' then
+        hitboxWidth = 8
+        hitboxHeight = 16
+        hitboxX = self.x + self.width
+        hitboxY = self.y + 2
+    elseif direction == 'up' then
+        hitboxWidth = 16
+        hitboxHeight = 8
+        hitboxX = self.x
+        hitboxY = self.y - hitboxHeight
+    else
+        hitboxWidth = 16
+        hitboxHeight = 8
+        hitboxX = self.x
+        hitboxY = self.y + self.height
+    end
+
+    -- separate hitbox for the player's sword; will only be active during this state
+    return Hitbox(hitboxX, hitboxY, hitboxWidth, hitboxHeight)
+end
+
 function Entity:render(adjacentOffsetX, adjacentOffsetY)
 
     -- draw sprite slightly transparent if invulnerable every 0.04 seconds
