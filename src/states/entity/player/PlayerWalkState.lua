@@ -19,7 +19,8 @@ function PlayerWalkState:init(player, dungeon)
         left = 'walk-left',
         right = 'walk-right',
         up = 'walk-up',
-        down = 'walk-down'
+        down = 'walk-down',
+        idle = 'idle'
     }
 end
 
@@ -37,7 +38,7 @@ function PlayerWalkState:update(dt)
         self.entity.direction = 'down'
         self.entity:changeAnimation(self.anims.down)
     else
-        self.entity:changeState('idle')
+        self.entity:changeState(self.anims.idle)
     end
 
     if self.entity.control:pressed('buttonA') then

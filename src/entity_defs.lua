@@ -66,6 +66,23 @@ ENTITY_DEFS = {
                 interval = 0.15,
                 texture = 'character-carrying-walk'
             },
+            ['idle-carrying-left'] = {
+                frames = {13},
+                texture = 'character-carrying-walk'
+            },
+            ['idle-carrying-right'] = {
+                frames = {5},
+                texture = 'character-carrying-walk'
+            },
+            ['idle-carrying-down'] = {
+                frames = {1},
+                texture = 'character-carrying-walk'
+            },
+            ['idle-carrying-up'] = {
+                frames = {9},
+                texture = 'character-carrying-walk'
+            },
+
             ['sword-left'] = {
                 frames = {13, 14, 15, 16},
                 interval = 0.05,

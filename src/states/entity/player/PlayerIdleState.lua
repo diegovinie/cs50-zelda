@@ -18,7 +18,7 @@ end
 function PlayerIdleState:update(dt)
     if self.entity.control.left or self.entity.control.right or
        self.entity.control.up or self.entity.control.down then
-        self.entity:changeState('walk-carrying')
+        self.entity:changeState('walk')
     end
 
     if self.entity.control.buttonA then

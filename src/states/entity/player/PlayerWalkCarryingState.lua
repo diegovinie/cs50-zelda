@@ -15,6 +15,7 @@ function PlayerWalkCarryingState:init(player, dungeon)
         left = 'walk-carrying-left',
         right = 'walk-carrying-right',
         up = 'walk-carrying-up',
-        down = 'walk-carrying-down'
+        down = 'walk-carrying-down',
+        idle = 'idle-carrying'
     }
 end
