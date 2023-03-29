@@ -15,21 +15,27 @@ function PlayerWalkState:init(player, dungeon)
     -- render offset for spaced character sprite; negated in render function of state
     self.entity.offsetY = 5
     self.entity.offsetX = 0
+    self.anims = {
+        left = 'walk-left',
+        right = 'walk-right',
+        up = 'walk-up',
+        down = 'walk-down'
+    }
 end
 
 function PlayerWalkState:update(dt)
     if self.entity.control.left then
         self.entity.direction = 'left'
-        self.entity:changeAnimation('walk-left')
+        self.entity:changeAnimation(self.anims.left)
     elseif self.entity.control.right then
         self.entity.direction = 'right'
-        self.entity:changeAnimation('walk-right')
+        self.entity:changeAnimation(self.anims.right)
     elseif self.entity.control.up then
         self.entity.direction = 'up'
-        self.entity:changeAnimation('walk-up')
+        self.entity:changeAnimation(self.anims.up)
     elseif self.entity.control.down then
         self.entity.direction = 'down'
-        self.entity:changeAnimation('walk-down')
+        self.entity:changeAnimation(self.anims.down)
     else
         self.entity:changeState('idle')
     end

@@ -11,6 +11,7 @@ Player = Class{__includes = Entity}
 function Player:init(def)
     Entity.init(self, def)
     self.control = def.control
+    self.holding = true
 end
 
 function Player:update(dt)
