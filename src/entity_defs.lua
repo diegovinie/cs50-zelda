@@ -46,25 +46,25 @@ ENTITY_DEFS = {
                 frames = {9},
                 texture = 'character-walk'
             },
-            ['walk-pot-left'] = {
+            ['walk-carrying-left'] = {
                 frames = {13, 14, 15, 16},
                 interval = 0.155,
-                texture = 'character-pot-walk'
+                texture = 'character-carrying-walk'
             },
-            ['walk-pot-right'] = {
+            ['walk-carrying-right'] = {
                 frames = {5, 6, 7, 8},
                 interval = 0.15,
-                texture = 'character-pot-walk'
+                texture = 'character-carrying-walk'
             },
-            ['walk-pot-down'] = {
+            ['walk-carrying-down'] = {
                 frames = {1, 2, 3, 4},
                 interval = 0.15,
-                texture = 'character-pot-walk'
+                texture = 'character-carrying-walk'
             },
-            ['walk-pot-up'] = {
+            ['walk-carrying-up'] = {
                 frames = {9, 10, 11, 12},
                 interval = 0.15,
-                texture = 'character-pot-walk'
+                texture = 'character-carrying-walk'
             },
             ['sword-left'] = {
                 frames = {13, 14, 15, 16},
