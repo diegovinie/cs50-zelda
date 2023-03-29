@@ -70,6 +70,30 @@ ENTITY_DEFS = {
                 looping = false,
                 texture = 'character-lift'
             },
+            ['throw-left'] = {
+                frames = {12, 10},
+                interval = 0.15,
+                looping = false,
+                texture = 'character-lift'
+            },
+            ['throw-right'] = {
+                frames = {6, 4},
+                interval = 0.15,
+                looping = false,
+                texture = 'character-lift'
+            },
+            ['throw-up'] = {
+                frames = {9, 7},
+                interval = 0.15,
+                looping = false,
+                texture = 'character-lift'
+            },
+            ['throw-down'] = {
+                frames = {3, 1},
+                interval = 0.15,
+                looping = false,
+                texture = 'character-lift'
+            },
             ['walk-carrying-left'] = {
                 frames = {13, 14, 15, 16},
                 interval = 0.155,

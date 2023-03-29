@@ -34,6 +34,7 @@ function PlayState:init()
         ['walk'] = function() return PlayerWalkState(self.player, self.dungeon) end,
         ['idle'] = function() return PlayerIdleState(self.player, self.dungeon) end,
         ['lift'] = function() return PlayerLiftState(self.player) end,
+        ['throw'] = function() return PlayerThrowingState(self.player) end,
         ['idle-carrying'] = function() return PlayerIdleCarryingState(self.player) end,
         ['walk-carrying'] = function() return PlayerWalkCarryingState(self.player, self.dungeon) end,
         ['swing-sword'] = function() return PlayerSwingSwordState(self.player, self.dungeon) end

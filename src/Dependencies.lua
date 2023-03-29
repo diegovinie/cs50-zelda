@@ -34,6 +34,7 @@ require 'src/states/entity/player/PlayerSwingSwordState'
 require 'src/states/entity/player/PlayerWalkState'
 require 'src/states/entity/player/PlayerWalkCarryingState'
 require 'src/states/entity/player/PlayerLiftState'
+require 'src/states/entity/player/PlayerThrowingState'
 
 require 'src/states/game/GameOverState'
 require 'src/states/game/PlayState'

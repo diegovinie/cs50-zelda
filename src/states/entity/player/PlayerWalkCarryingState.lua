@@ -22,8 +22,7 @@ end
 
 function PlayerWalkCarryingState:update(dt)
     if self.entity.control:pressed('buttonA') then
-        print('throw')
-        self.entity:changeState('walk')
+        self.entity:changeState('throw')
     else
         PlayerWalkState.update(self, dt)
     end
