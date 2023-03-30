@@ -33,7 +33,7 @@ function PlayState:init()
     self.player.stateMachine = StateMachine {
         ['walk'] = function() return PlayerWalkState(self.player, self.dungeon) end,
         ['idle'] = function() return PlayerIdleState(self.player, self.dungeon) end,
-        ['lift'] = function() return PlayerLiftState(self.player) end,
+        ['lift'] = function() return PlayerLiftingState(self.player, self.dungeon) end,
         ['throw'] = function() return PlayerThrowingState(self.player) end,
         ['idle-carrying'] = function() return PlayerIdleCarryingState(self.player) end,
         ['walk-carrying'] = function() return PlayerWalkCarryingState(self.player, self.dungeon) end,

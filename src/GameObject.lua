@@ -65,4 +65,13 @@ function GameObject:render(adjacentOffsetX, adjacentOffsetY)
         self.scale,
         self.scale
     )
+
+    -- debugging
+    -- love.graphics.rectangle(
+    --     'line',
+    --     self.x + (0.5 - 0.5 * self.scale) * self.width + adjacentOffsetX,
+    --     self.y + (0.5 - 0.5 * self.scale) * self.height + adjacentOffsetY,
+    --     self.width,
+    --     self.height
+    -- )
 end

@@ -40,6 +40,9 @@ function love.resize(w, h)
 end
 
 function love.keypressed(key)
+    if key == 'r' then
+        gStateMachine:change('play')
+    end
     Control.RegisterKeyboard(key)
 end
 

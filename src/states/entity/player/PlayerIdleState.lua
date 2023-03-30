@@ -28,7 +28,7 @@ function PlayerIdleState:update(dt)
             for _, object in pairs(self.dungeon.currentRoom.objects) do
                 if self.entity.collides(box, object) then
                     if object.type == 'carriable' then
-                        self.entity:changeState('lift')
+                        self.entity:changeState('lift', { object = object })
                         goto continue
                     end
                 end
